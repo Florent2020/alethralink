@@ -531,7 +531,6 @@ import {
   FiSettings,
   FiRepeat,
   FiLayers,
-  FiCpu,
   FiShield,
   FiTool,
   FiArrowRight,
