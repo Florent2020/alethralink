@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+import logoImg from "../assets/logo.jpg";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -15,9 +17,9 @@ export default function Header() {
   return (
     <Wrap>
       <Inner>
-        <Brand to="/" onClick={close}>
-          AlethraLink
-        </Brand>
+        <Logo to="/" onClick={close}>
+          <img src={logoImg} alt="logo" />
+        </Logo>
 
         <Right>
           <DesktopNav>
@@ -87,13 +89,8 @@ const Inner = styled.div`
   gap: 16px;
 `;
 
-const Brand = styled(NavLink)`
-  color: #fff;
-  text-decoration: none;
-  font-weight: 900;
-  letter-spacing: 0.3px;
-  font-size: 1.08rem;
-  white-space: nowrap;
+const Logo = styled(NavLink)`
+  width: 150px;
 `;
 
 const Right = styled.div`

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FiMail, FiArrowUpRight } from "react-icons/fi";
 
+import logoImg from "../assets/logo.jpg";
+
 export default function Footer() {
   return (
     <Wrap>
@@ -9,7 +11,9 @@ export default function Footer() {
         <Content>
           <Top>
             <Brand>
-              <Logo>AlethraLink</Logo>
+              <Logo to="/">
+                <img src={logoImg} alt="logo" />
+              </Logo>
               <Tagline>SMART. SCALABLE. STRATEGIC.</Tagline>
 
               <Desc>
@@ -115,8 +119,7 @@ const Top = styled.div`
 const Brand = styled.div``;
 
 const Logo = styled.div`
-  font-size: 1.3rem;
-  font-weight: 900;
+  width: 150px;
 `;
 
 const Tagline = styled.div`
