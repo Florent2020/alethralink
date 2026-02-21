@@ -540,7 +540,7 @@ import {
 import heroImg from "../assets/network-cubes.jpg"; // <-- add/rename your image
 import imgA from "../assets/network-cubes.jpg"; // <-- add/rename your image
 import imgB from "../assets/fiber.jpg"; // <-- add/rename your image
-import imgC from "../assets/isp.jpg"; // <-- add/rename your image
+// import imgC from "../assets/isp.jpg"; // <-- add/rename your image
 
 import equipmentImg from "../assets/telecom-solutions-lightera-4.jpg";
 
@@ -773,7 +773,7 @@ export default function Services() {
             <ImageStack>
               <img src={imgA} alt="Network architecture" />
               <img src={imgB} alt="Fiber connectivity" />
-              <img src={imgC} alt="ISP operations" />
+              {/* <img src={imgC} alt="ISP operations" /> */}
             </ImageStack>
           </Split>
         </Container>
