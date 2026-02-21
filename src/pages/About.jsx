@@ -353,10 +353,13 @@ export default function About() {
               <Text>
                 <H2>Our Story</H2>
                 <P>
-                  AlethraLink was established by experienced network engineers
-                  and a seasoned manager who shared a common vision — to
-                  transform how organizations experience network engineering
-                  services.
+                  Our journey began with a shared vision among experienced
+                  network engineers and a seasoned manager who saw an
+                  opportunity to revolutionize network engineering services.
+                  Founded on the principles of technical excellence and
+                  client-focused solutions, we've built our reputation on
+                  delivering seamless telecommunication solutions that drive
+                  business success.
                 </P>
                 <P>
                   With decades of combined expertise across leading
@@ -459,24 +462,116 @@ export default function About() {
 
             <ValuesGrid>
               <ValueCard>
-                <FiTrendingUp /> <span>Innovation</span>
+                <FiTrendingUp />
+                <h3>Innovation</h3>
+                <P>
+                  Embracing technological advancement to stay at the forefront
+                  of telecommunications.
+                </P>
               </ValueCard>
               <ValueCard>
-                <FiHeart /> <span>Reliability</span>
+                <FiHeart />
+                <h3>Reliability & Quality</h3>
+                <p>
+                  Delivering dependable, high-performance solutions with the
+                  highest standards of service excellence.
+                </p>
               </ValueCard>
               <ValueCard>
-                <FiTarget /> <span>Quality</span>
+                <FiTarget />
+                <h3>Security & Privacy</h3>
+                <p>
+                  WProtecting customer data and communications through rigorous
+                  security practices.
+                </p>
               </ValueCard>
               <ValueCard>
-                <FiShield /> <span>Security & Privacy</span>
+                <FiShield />
+                <h3>Sustainability</h3>
+                <p>
+                  Promoting responsible, environmentally conscious solutions
+                  that support long-term growth.
+                </p>
               </ValueCard>
               <ValueCard>
-                <FiUsers /> <span>Inclusivity</span>
+                <FiUsers />
+                <h3>Inclusivity</h3>
+                <p>
+                  Enabling accessible, scalable connectivity for diverse
+                  businesses and communities.
+                </p>
               </ValueCard>
               <ValueCard>
-                <FiTrendingUp /> <span>Continuous Improvement</span>
+                <FiTrendingUp />
+                <h3>Continuous Improvement</h3>
+                <p>
+                  Constantly refining our processes, technologies, and services
+                  to create lasting value.
+                </p>
               </ValueCard>
             </ValuesGrid>
+
+            {/* <Section>
+              <Container>
+                <SectionSurface>
+                  <Center style={{ marginBottom: 18 }}>
+                    <H2>Our Values</H2>
+                  </Center>
+
+                  <Grid>
+                    <InfoCard>
+                      <FiTrendingUp />
+                      <h3>Innovation</h3>
+                      <p>
+                        Embracing technological advancement to stay at the
+                        forefront of telecommunications.
+                      </p>
+                    </InfoCard>
+                    <InfoCard>
+                      <FiHeart />
+                      <h3>Reliability & Quality</h3>
+                      <p>
+                        Delivering dependable, high-performance solutions with
+                        the highest standards of service excellence.
+                      </p>
+                    </InfoCard>
+                    <InfoCard>
+                      <FiUsers />
+                      <h3>Security & Privacy</h3>
+                      <p>
+                        WProtecting customer data and communications through
+                        rigorous security practices.
+                      </p>
+                    </InfoCard>
+
+                    <InfoCard>
+                      <FiShield />
+                      <h3>Sustainability</h3>
+                      <p>
+                        Promoting responsible, environmentally conscious
+                        solutions that support long-term growth.
+                      </p>
+                    </InfoCard>
+                    <InfoCard>
+                      <FiUsers />
+                      <h3>Inclusivity</h3>
+                      <p>
+                        Enabling accessible, scalable connectivity for diverse
+                        businesses and communities.
+                      </p>
+                    </InfoCard>
+                    <InfoCard>
+                      <FiTrendingUp />
+                      <h3>Continuous Improvement</h3>
+                      <p>
+                        Constantly refining our processes, technologies, and
+                        services to create lasting value.
+                      </p>
+                    </InfoCard>
+                  </Grid>
+                </SectionSurface>
+              </Container>
+            </Section> */}
 
             <CtaRow>
               <PrimaryBtn to="/contact">
@@ -521,7 +616,7 @@ const Overlay = styled.div`
 
 const HeroContent = styled.div`
   position: relative;
-  max-width: 900px;
+  max-width: 630px;
 `;
 
 const Kicker = styled.p`
@@ -728,7 +823,7 @@ const Divider = styled.div`
 const ValuesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 18px;
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -744,17 +839,26 @@ const ValueCard = styled.div`
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
 
   svg {
     color: #5eead4;
-    font-size: 20px;
+    font-size: 26px;
+    margin-top: 1rem;
   }
 
-  span {
-    font-weight: 800;
+  h3 {
+    font-weight: 500;
     opacity: 0.95;
+    margin: 0.3rem 0 0rem;
+    font-size: 1.3rem;
+  }
+
+  p {
+    text-align: center;
+    margin-top: 0.3rem;
   }
 `;
 

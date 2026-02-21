@@ -606,7 +606,7 @@ const Overlay = styled.div`
 
 const HeroContent = styled.div`
   position: relative;
-  max-width: 860px;
+  max-width: 660px;
 `;
 
 const Kicker = styled.p`

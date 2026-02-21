@@ -13,8 +13,9 @@ import {
 } from "react-icons/fi";
 // import { Container } from "../components/UI";
 
-import heroImg from "../assets/hero-city.jpg"; // city image
+import heroImg from "../assets/hero-city-1.jpg"; // city image
 import dataCenterImg from "../assets/data-center.jpg";
+import howWeWorkImg from "../assets/how-we-work.jpg";
 
 export default function Home() {
   return (
@@ -57,6 +58,9 @@ export default function Home() {
                   <FiActivity />
                 </IconWrap>
                 <CardTitle>Network Operations</CardTitle>
+                <Paragraph>
+                  Professional technical support for network operations
+                </Paragraph>
               </ServiceCard>
 
               <ServiceCard>
@@ -64,6 +68,9 @@ export default function Home() {
                   <FiLayers />
                 </IconWrap>
                 <CardTitle>Layer 2 / Layer 3 Troubleshooting</CardTitle>
+                <Paragraph>
+                  Expert diagnosis and resolution of network issues
+                </Paragraph>
               </ServiceCard>
 
               <ServiceCard>
@@ -71,6 +78,9 @@ export default function Home() {
                   <FiCpu />
                 </IconWrap>
                 <CardTitle>Network Design & Optimization</CardTitle>
+                <Paragraph>
+                  Architecture design and performance optimization
+                </Paragraph>
               </ServiceCard>
 
               <ServiceCard>
@@ -78,6 +88,9 @@ export default function Home() {
                   <FiShield />
                 </IconWrap>
                 <CardTitle>Standardization & Audits</CardTitle>
+                <Paragraph>
+                  Configuration audits and best-practice implementation
+                </Paragraph>
               </ServiceCard>
 
               <ServiceCard>
@@ -85,6 +98,9 @@ export default function Home() {
                   <FiRefreshCw />
                 </IconWrap>
                 <CardTitle>Migration Support</CardTitle>
+                <Paragraph>
+                  Structured upgrade and migration execution
+                </Paragraph>
               </ServiceCard>
 
               <ServiceCard>
@@ -92,6 +108,9 @@ export default function Home() {
                   <FiHeadphones />
                 </IconWrap>
                 <CardTitle>Remote Engineering</CardTitle>
+                <Paragraph>
+                  European-based support for ISP and enterprise networks
+                </Paragraph>
               </ServiceCard>
             </Grid>
           </SectionSurface>
@@ -120,6 +139,30 @@ export default function Home() {
             <ImageBlock>
               <img src={dataCenterImg} alt="Data Center" />
             </ImageBlock>
+          </Split>
+        </Container>
+      </Section>
+
+      {/* HOW WE WORK PREVIEW */}
+      <Section>
+        <Container>
+          <Split>
+            <ImageBlock>
+              <img src={howWeWorkImg} alt="Services" />
+            </ImageBlock>
+
+            <TextBlock>
+              <SectionTitle>How We Work</SectionTitle>
+              <Paragraph>
+                We operate as an extension of our clients' technical teams,
+                following structured workflows, disciplined documentation
+                practices, and clear technical communication. Our approach
+                prioritizes transparency and measurable technical outcomes
+                rather than marketing positioning.
+              </Paragraph>
+
+              <PrimaryBtn to="/services">Learn More</PrimaryBtn>
+            </TextBlock>
           </Split>
         </Container>
       </Section>
@@ -203,7 +246,7 @@ const Overlay = styled.div`
   background: linear-gradient(
     180deg,
     rgba(10, 14, 22, 0.85),
-    rgba(10, 14, 22, 0.95)
+    rgb(10 14 22 / 75%)
   );
 `;
 

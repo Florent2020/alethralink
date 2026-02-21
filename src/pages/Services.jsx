@@ -534,12 +534,15 @@ import {
   FiShield,
   FiTool,
   FiArrowRight,
+  FiServer,
 } from "react-icons/fi";
 
 import heroImg from "../assets/network-cubes.jpg"; // <-- add/rename your image
 import imgA from "../assets/network-cubes.jpg"; // <-- add/rename your image
 import imgB from "../assets/fiber.jpg"; // <-- add/rename your image
 import imgC from "../assets/isp.jpg"; // <-- add/rename your image
+
+import equipmentImg from "../assets/telecom-solutions-lightera-4.jpg";
 
 export default function Services() {
   return (
@@ -656,6 +659,55 @@ export default function Services() {
                 </List>
               </Card>
             </Grid>
+          </SectionSurface>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <SectionSurface>
+            <EquipSplit>
+              <EquipText>
+                <Eyebrow>
+                  <FiServer />
+                  Equipment Coverage
+                </Eyebrow>
+
+                <SectionTitle>
+                  Comprehensive Expertise in Networking Equipment
+                </SectionTitle>
+
+                <Paragraph>
+                  We provide professional solutions for high-performance
+                  networking equipment, including Juniper MX, QFX, ACX, and EX
+                  Series, Cisco ASR and 3400/3600/3750 switches, Alcatel 7210,
+                  7750, and 7360 models, as well as RAD, ADVA, and CIENA
+                  devices.
+                </Paragraph>
+
+                <Paragraph>
+                  Trust us for seamless setup, maintenance, and optimization of
+                  your network infrastructure.
+                </Paragraph>
+
+                <BadgeRow>
+                  <Badge>Juniper (MX / QFX / ACX / EX)</Badge>
+                  <Badge>Cisco (ASR / 3400 / 3600 / 3750)</Badge>
+                  <Badge>Alcatel (7210 / 7750 / 7360)</Badge>
+                  <Badge>RAD</Badge>
+                  <Badge>ADVA</Badge>
+                  <Badge>CIENA</Badge>
+                </BadgeRow>
+
+                <PrimaryBtn to="/contact">
+                  Talk to an Engineer <FiArrowRight />
+                </PrimaryBtn>
+              </EquipText>
+
+              <EquipMedia>
+                <img src={equipmentImg} alt="Networking equipment" />
+              </EquipMedia>
+            </EquipSplit>
           </SectionSurface>
         </Container>
       </Section>
@@ -822,7 +874,7 @@ const Overlay = styled.div`
 
 const HeroContent = styled.div`
   position: relative;
-  max-width: 800px;
+  max-width: 560px;
 `;
 
 const Kicker = styled.p`
@@ -961,6 +1013,88 @@ const IconWrap = styled.div`
 const CardTitle = styled.h3`
   margin: 0 0 10px;
   font-size: 1.12rem;
+`;
+
+const EquipSplit = styled.div`
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 44px;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+`;
+
+const EquipText = styled.div`
+  max-width: 720px;
+
+  ${PrimaryBtn} {
+    margin-top: 18px;
+  }
+`;
+
+const Eyebrow = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(94, 234, 212, 0.08);
+  border: 1px solid rgba(94, 234, 212, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 14px;
+
+  svg {
+    color: #5eead4;
+    font-size: 16px;
+  }
+`;
+
+const BadgeRow = styled.div`
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
+const Badge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+`;
+
+const EquipMedia = styled.div`
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 900px) {
+    img {
+      max-height: 320px;
+    }
+  }
 `;
 
 const List = styled.ul`

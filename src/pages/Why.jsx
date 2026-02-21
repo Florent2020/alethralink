@@ -397,7 +397,7 @@ import {
 } from "react-icons/fi";
 
 import heroImg from "../assets/office.jpg"; // <-- add/rename your image
-import imgTeam from "../assets/office.jpg"; // <-- add/rename your image
+import imgTeam from "../assets/office.png"; // <-- add/rename your image
 
 export default function Why() {
   return (
@@ -437,6 +437,12 @@ export default function Why() {
                   With over 40 years of combined industry expertise, AlethraLink
                   has delivered complex migrations, large-scale implementations,
                   and seamless multi-vendor integrations.
+                </P>
+                <P>
+                  Through close collaboration with leading telecommunications
+                  providers, we deliver scalable, secure, and reliable network
+                  solutions tailored to each client—built to be efficient,
+                  resilient, and future-ready.
                 </P>
                 <P>
                   Our engineers have supported ISP and enterprise networks,
@@ -564,6 +570,10 @@ export default function Why() {
                 <span>Premium services at competitive costs.</span>
               </li>
               <li>
+                <strong>Tech-Ready Infrastructure</strong>
+                <span>Modern IT infrastructure built for global busines.</span>
+              </li>
+              <li>
                 <strong>Time Zone Advantage</strong>
                 <span>
                   Real-time collaboration with Europe & overlap with the U.S.
@@ -572,6 +582,23 @@ export default function Why() {
               <li>
                 <strong>Stable & Reliable</strong>
                 <span>Secure environment for long-term partnerships.</span>
+              </li>
+              <li>
+                <strong>Motivated Workforce</strong>
+                <span>
+                  Qualified professionals delivering measurable value and cost
+                  savings.
+                </span>
+              </li>
+              <li>
+                <strong>Mature ICT Market</strong>
+                <span>
+                  Proven growth of ICT businesses over the past decade.
+                </span>
+              </li>
+              <li>
+                <strong>Strategic Location</strong>
+                <span>Competitive hub for ICT and BPO services.</span>
               </li>
               <li>
                 <strong>Engineering Excellence</strong>
@@ -622,7 +649,7 @@ const Overlay = styled.div`
 
 const HeroContent = styled.div`
   position: relative;
-  max-width: 860px;
+  max-width: 730px;
 `;
 
 const Kicker = styled.p`
@@ -727,6 +754,12 @@ const Image = styled.div`
     border-radius: 18px;
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.08);
+    height: 360px;
+    object-fit: cover;
+
+    @media (max-width: 900px) {
+      height: 100%;
+    }
   }
 `;
 
