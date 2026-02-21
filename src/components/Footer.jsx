@@ -1,17 +1,27 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiMail, FiArrowUpRight } from "react-icons/fi";
 
 import logoImg from "../assets/logo.jpg";
 
 export default function Footer() {
+  const [open, setOpen] = useState(false);
+
+  const close = () => setOpen(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => (document.body.style.overflow = "");
+  }, [open]);
+
   return (
     <Wrap>
       <Container>
         <Content>
           <Top>
             <Brand>
-              <Logo to="/">
+              <Logo to="/" onClick={close}>
                 <img src={logoImg} alt="logo" />
               </Logo>
               <Tagline>SMART. SCALABLE. STRATEGIC.</Tagline>
@@ -118,8 +128,10 @@ const Top = styled.div`
 
 const Brand = styled.div``;
 
-const Logo = styled.div`
-  width: 150px;
+const Logo = styled(NavLink)`
+  img {
+    width: 150px !important;
+  }
 `;
 
 const Tagline = styled.div`
