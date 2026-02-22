@@ -92,7 +92,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Florent Hajdari
+                Florent Hajdari <FiArrowUpRight />
               </DevLink>
             </BottomRight>
           </Bottom>
@@ -244,12 +244,28 @@ const BottomRight = styled.div`
 `;
 
 const DevLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
   color: white;
   font-weight: 700;
   text-decoration: none;
   transition: 0.25s ease;
 
+  svg {
+    font-size: 0.95em;
+    opacity: 0.85;
+    transform: translateY(-0.5px);
+    transition: 0.25s ease;
+  }
+
   &:hover {
     color: #5eead4;
+  }
+
+  &:hover svg {
+    opacity: 1;
+    transform: translate(2px, -2px);
   }
 `;
