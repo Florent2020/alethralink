@@ -85,11 +85,16 @@ export default function Footer() {
               © {new Date().getFullYear()} AlethraLink. All rights reserved.
             </Copy>
 
-            <BottomLinks>
-              <MiniLink to="/contact">Get in Touch</MiniLink>
-              <Dot>•</Dot>
-              <MiniLink to="/services">Explore Services</MiniLink>
-            </BottomLinks>
+            <BottomRight>
+              Designed &amp; Developed by{" "}
+              <DevLink
+                href="https://florent-hajdari.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Florent Hajdari
+              </DevLink>
+            </BottomRight>
           </Bottom>
         </Content>
       </Container>
@@ -233,22 +238,18 @@ const Copy = styled.div`
   font-size: 0.9rem;
 `;
 
-const BottomLinks = styled.div`
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
+const BottomRight = styled.div`
+  font-size: 0.95rem;
+  opacity: 0.75;
 `;
 
-const MiniLink = styled(Link)`
-  color: rgba(255, 255, 255, 0.8);
+const DevLink = styled.a`
+  color: white;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
+  transition: 0.25s ease;
 
   &:hover {
     color: #5eead4;
   }
-`;
-
-const Dot = styled.span`
-  opacity: 0.5;
 `;
