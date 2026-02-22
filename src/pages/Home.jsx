@@ -10,12 +10,24 @@ import {
   FiMail,
   FiPhone,
   FiMapPin,
+  FiAward,
+  FiClock,
+  FiCheckCircle,
+  FiTrendingUp,
+  FiSliders,
+  FiWifi,
+  FiBriefcase,
+  FiServer,
+  FiUsers,
+  FiArrowRight,
 } from "react-icons/fi";
 // import { Container } from "../components/UI";
 
 import heroImg from "../assets/hero-city-1.jpg"; // city image
 import dataCenterImg from "../assets/data-center.jpg";
 import howWeWorkImg from "../assets/how-we-work.jpg";
+
+import whoSupportImg from "../assets/who-support.png";
 
 export default function Home() {
   return (
@@ -133,7 +145,10 @@ export default function Home() {
                 disciplined, and results-driven.
               </Paragraph>
 
-              <PrimaryBtn to="/about">Learn More</PrimaryBtn>
+              {/* <PrimaryBtn to="/about">Learn More</PrimaryBtn> */}
+              <div style={{ marginTop: 28 }}>
+                <PrimaryBtn to="/about">Learn More</PrimaryBtn>
+              </div>
             </TextBlock>
 
             <ImageBlock>
@@ -161,9 +176,188 @@ export default function Home() {
                 rather than marketing positioning.
               </Paragraph>
 
-              <PrimaryBtn to="/services">Learn More</PrimaryBtn>
+              <div style={{ marginTop: 28 }}>
+                <PrimaryBtn to="/services">Learn More</PrimaryBtn>
+              </div>
             </TextBlock>
           </Split>
+        </Container>
+      </Section>
+
+      {/* WHY PARTNER WITH US */}
+      <Section>
+        <Container>
+          <SectionSurface>
+            <Center>
+              <SectionTitle>Why Partner with Us</SectionTitle>
+              <Paragraph>
+                A reliable engineering partner focused on stability, discipline,
+                and real-world delivery.
+              </Paragraph>
+            </Center>
+
+            <WhyGrid>
+              <WhyCard>
+                <WhyIcon>
+                  <FiAward />
+                </WhyIcon>
+                <WhyTitle>Professional Experts</WhyTitle>
+                <WhyDesc>
+                  Highly skilled network engineers with proven expertise
+                </WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiClock />
+                </WhyIcon>
+                <WhyTitle>24/7 Premium Support</WhyTitle>
+                <WhyDesc>
+                  Round-the-clock technical assistance when you need it
+                </WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiCheckCircle />
+                </WhyIcon>
+                <WhyTitle>Top Quality Solutions</WhyTitle>
+                <WhyDesc>
+                  Enterprise-grade implementations and configurations
+                </WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiShield />
+                </WhyIcon>
+                <WhyTitle>Certified Technicians</WhyTitle>
+                <WhyDesc>
+                  Industry-recognized qualifications and experience
+                </WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiTrendingUp />
+                </WhyIcon>
+                <WhyTitle>Reliable Performance</WhyTitle>
+                <WhyDesc>Consistent delivery and operational stability</WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiCpu />
+                </WhyIcon>
+                <WhyTitle>Cutting-Edge Technology</WhyTitle>
+                <WhyDesc>Modern platforms and best-practice approaches</WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiSliders />
+                </WhyIcon>
+                <WhyTitle>Tailored Connectivity</WhyTitle>
+                <WhyDesc>
+                  Custom solutions designed for your environment
+                </WhyDesc>
+              </WhyCard>
+
+              <WhyCard>
+                <WhyIcon>
+                  <FiLayers />
+                </WhyIcon>
+                <WhyTitle>Vendor-Agnostic</WhyTitle>
+                <WhyDesc>Multi-vendor expertise without bias</WhyDesc>
+              </WhyCard>
+            </WhyGrid>
+          </SectionSurface>
+        </Container>
+      </Section>
+
+      {/* WHO WE SUPPORT */}
+      <Section>
+        <Container>
+          <SectionSurface>
+            <SplitSupport>
+              <SupportText>
+                <SupportTitle>Who We Support</SupportTitle>
+
+                <SupportLead>
+                  We provide expert network engineering services to industries
+                  that rely on secure, high-performance connectivity. Our
+                  experience allows us to support diverse environments while
+                  delivering reliable, scalable, and efficient network
+                  solutions.
+                </SupportLead>
+
+                <SupportList>
+                  <li>
+                    <SupportIcon>
+                      <FiWifi />
+                    </SupportIcon>
+                    <div>
+                      <strong>Internet Service Providers (ISPs)</strong>
+                      <span>
+                        Carrier-grade operations, troubleshooting, and delivery
+                        support.
+                      </span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <SupportIcon>
+                      <FiBriefcase />
+                    </SupportIcon>
+                    <div>
+                      <strong>Enterprise Network Environments</strong>
+                      <span>
+                        Secure, stable connectivity across distributed business
+                        sites.
+                      </span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <SupportIcon>
+                      <FiServer />
+                    </SupportIcon>
+                    <div>
+                      <strong>Data Centers</strong>
+                      <span>
+                        High-availability networking and performance-focused
+                        optimization.
+                      </span>
+                    </div>
+                  </li>
+
+                  <li>
+                    <SupportIcon>
+                      <FiUsers />
+                    </SupportIcon>
+                    <div>
+                      <strong>Managed Service Providers (MSPs)</strong>
+                      <span>
+                        Structured engineering capacity when you need reliable
+                        execution.
+                      </span>
+                    </div>
+                  </li>
+                </SupportList>
+
+                <SupportActions>
+                  <PrimaryBtn to="/contact">
+                    Talk to an Engineer <FiArrowRight />
+                  </PrimaryBtn>
+                </SupportActions>
+              </SupportText>
+
+              <SupportVisual>
+                {/* Use any of your existing images. Example: */}
+                <img src={whoSupportImg} alt="Who we support" />
+              </SupportVisual>
+            </SplitSupport>
+          </SectionSurface>
         </Container>
       </Section>
 
@@ -236,7 +430,7 @@ const Hero = styled.section`
   background-image: url(${heroImg});
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
+  padding: 70px 0;
   color: white;
 `;
 
@@ -245,8 +439,8 @@ const Overlay = styled.div`
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 14, 22, 0.85),
-    rgb(10 14 22 / 75%)
+    rgba(10, 14, 22, 0.82),
+    rgb(10 14 22 / 62%)
   );
 `;
 
@@ -282,14 +476,39 @@ const HeroButtons = styled.div`
   flex-wrap: wrap;
 `;
 
+// const PrimaryBtn = styled(Link)`
+//   padding: 14px 24px;
+//   border-radius: 14px;
+//   background: #5eead4;
+//   color: #0b1220;
+//   font-weight: 700;
+//   text-decoration: none;
+//   transition: 0.3s ease;
+
+//   &:hover {
+//     transform: translateY(-3px);
+//     background: #2dd4bf;
+//   }
+// `;
+
 const PrimaryBtn = styled(Link)`
-  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 26px;
   border-radius: 14px;
   background: #5eead4;
   color: #0b1220;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   transition: 0.3s ease;
+
+  svg {
+    font-size: 18px;
+    display: block;
+  }
 
   &:hover {
     transform: translateY(-3px);
@@ -312,11 +531,16 @@ const SecondaryBtn = styled(Link)`
 `;
 
 const Section = styled.section`
-  padding: 90px 0;
+  padding: 60px 0;
   position: relative;
 
   /* This makes the background feel continuous (no harsh band changes) */
-  background: radial-gradient(circle at top left, #111b2e, #0b1220 60%);
+  /* background: radial-gradient(circle at top left, #111b2e, #0b1220 60%); */
+
+  background: ${({ alt }) =>
+    alt
+      ? "radial-gradient(circle at top right, #111b2e, #0b1220 60%)"
+      : "radial-gradient(circle at top left, #111b2e, #0b1220 60%)"};
 `;
 
 const SectionSurface = styled.div`
@@ -349,6 +573,8 @@ const Center = styled.div`
 
 const SectionTitle = styled.h2`
   font-size: 2.2rem;
+  /* margin-bottom: 0; */
+  margin-top: 0;
 `;
 
 const Grid = styled.div`
@@ -412,11 +638,177 @@ const ImageBlock = styled.div`
   }
 `;
 
+// const Paragraph = styled.p`
+//   line-height: 1.7;
+//   margin-bottom: 20px;
+//   opacity: 0.9;
+
+//   &:last-of-type {
+//     position: relative;
+//     margin-bottom: 2.5rem;
+//   }
+// `;
+
 const Paragraph = styled.p`
   line-height: 1.7;
-  margin-bottom: 20px;
+  margin: 0 0 18px;
   opacity: 0.9;
 `;
+
+/* WHY PARTNER WITH US */
+
+const WhyGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const WhyCard = styled.div`
+  padding: 22px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.25s ease;
+  min-height: 150px;
+
+  &:hover {
+    transform: translateY(-6px);
+    background: rgba(94, 234, 212, 0.07);
+    border-color: rgba(94, 234, 212, 0.18);
+  }
+`;
+
+const WhyIcon = styled.div`
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(94, 234, 212, 0.1);
+  border: 1px solid rgba(94, 234, 212, 0.2);
+  margin-bottom: 12px;
+
+  svg {
+    color: #5eead4;
+    font-size: 20px;
+  }
+`;
+
+const WhyTitle = styled.h3`
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+`;
+
+const WhyDesc = styled.p`
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0.88;
+`;
+
+/* WHO WE SUPPORT */
+
+const SplitSupport = styled.div`
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 46px;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const SupportText = styled.div`
+  max-width: 680px;
+`;
+
+const SupportTitle = styled.h2`
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+`;
+
+const SupportLead = styled.p`
+  margin: 0 0 20px;
+  line-height: 1.75;
+  opacity: 0.92;
+`;
+
+const SupportList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+
+  li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.25s ease;
+  }
+
+  li:hover {
+    transform: translateY(-4px);
+    background: rgba(94, 234, 212, 0.06);
+    border-color: rgba(94, 234, 212, 0.18);
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 900;
+  }
+
+  span {
+    display: block;
+    opacity: 0.88;
+    line-height: 1.6;
+  }
+`;
+
+const SupportIcon = styled.div`
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(94, 234, 212, 0.1);
+  border: 1px solid rgba(94, 234, 212, 0.2);
+
+  svg {
+    color: #5eead4;
+    font-size: 18px;
+  }
+`;
+
+const SupportActions = styled.div`
+  margin-top: 16px;
+`;
+
+const SupportVisual = styled.div`
+  img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+`;
+
+/* Contact Style */
 
 const ContactGrid = styled.div`
   display: grid;

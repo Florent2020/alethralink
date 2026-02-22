@@ -1,465 +1,3 @@
-// import { useState } from "react";
-// import styled from "styled-components";
-// import { Container, Section, Card, Button } from "../components/UI";
-
-// // Swap with your preferred image:
-// import dcImg from "../assets/data-center.jpg";
-
-// export default function Contact() {
-//   const [form, setForm] = useState({
-//     name: "",
-//     email: "",
-//     company: "",
-//     message: "",
-//   });
-
-//   const [status, setStatus] = useState({ type: "", msg: "" });
-
-//   function onChange(e) {
-//     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
-//   }
-
-//   function onSubmit(e) {
-//     e.preventDefault();
-
-//     // Demo behavior (no backend yet)
-//     if (!form.name || !form.email || !form.message) {
-//       setStatus({
-//         type: "error",
-//         msg: "Please fill name, email, and message.",
-//       });
-//       return;
-//     }
-//     setStatus({ type: "success", msg: "Message sent! We’ll reply shortly." });
-//     setForm({ name: "", email: "", company: "", message: "" });
-//   }
-
-//   return (
-//     <>
-//       <Hero>
-//         <Container>
-//           <HeroGrid>
-//             <HeroText>
-//               <Kicker>Contact</Kicker>
-//               <H1>
-//                 Let’s talk about your <span>connectivity</span>.
-//               </H1>
-//               <Lead>
-//                 Send us your needs and we’ll recommend the best plan and setup.
-//                 Reliable, scalable, and clear.
-//               </Lead>
-
-//               <Info>
-//                 <InfoRow>
-//                   <Label>Sales</Label>
-//                   <Value>sales@alethralink.com</Value>
-//                 </InfoRow>
-//                 <InfoRow>
-//                   <Label>Support</Label>
-//                   <Value>support@alethralink.com</Value>
-//                 </InfoRow>
-//                 <InfoRow>
-//                   <Label>Hours</Label>
-//                   <Value>Mon–Fri • 09:00–17:00</Value>
-//                 </InfoRow>
-//               </Info>
-//             </HeroText>
-
-//             <HeroMedia>
-//               <MediaCard>
-//                 <img src={dcImg} alt="Data center" />
-//                 <Overlay />
-//                 <MediaText>
-//                   <b>Fast response</b>
-//                   <span>Clear steps • Transparent delivery</span>
-//                 </MediaText>
-//               </MediaCard>
-//             </HeroMedia>
-//           </HeroGrid>
-//         </Container>
-//       </Hero>
-
-//       <Section $tight>
-//         <Container>
-//           <FormGrid>
-//             <FormCard as="form" onSubmit={onSubmit}>
-//               <FormTitle>Send a message</FormTitle>
-//               <FormSub>
-//                 Tell us what you need. We’ll get back with a plan and pricing.
-//               </FormSub>
-
-//               <Row>
-//                 <Field>
-//                   <span>Name *</span>
-//                   <input
-//                     name="name"
-//                     value={form.name}
-//                     onChange={onChange}
-//                     placeholder="Your name"
-//                   />
-//                 </Field>
-
-//                 <Field>
-//                   <span>Email *</span>
-//                   <input
-//                     name="email"
-//                     value={form.email}
-//                     onChange={onChange}
-//                     placeholder="you@company.com"
-//                     type="email"
-//                   />
-//                 </Field>
-//               </Row>
-
-//               <Row>
-//                 <Field>
-//                   <span>Company</span>
-//                   <input
-//                     name="company"
-//                     value={form.company}
-//                     onChange={onChange}
-//                     placeholder="Company name"
-//                   />
-//                 </Field>
-
-//                 <Field>
-//                   <span>Topic</span>
-//                   <select name="topic" disabled>
-//                     <option>General inquiry (demo)</option>
-//                   </select>
-//                 </Field>
-//               </Row>
-
-//               <Field>
-//                 <span>Message *</span>
-//                 <textarea
-//                   name="message"
-//                   value={form.message}
-//                   onChange={onChange}
-//                   placeholder="Tell us about your location, number of users, and the service you need..."
-//                   rows={6}
-//                 />
-//               </Field>
-
-//               {status.msg ? (
-//                 <Status $type={status.type}>{status.msg}</Status>
-//               ) : null}
-
-//               <Actions>
-//                 <Button type="submit">Send</Button>
-//               </Actions>
-//             </FormCard>
-
-//             <Side>
-//               <SideCard>
-//                 <h3>What to include</h3>
-//                 <ul>
-//                   <li>City / location</li>
-//                   <li>Business type</li>
-//                   <li>Users / devices</li>
-//                   <li>Required uptime</li>
-//                   <li>Current provider (optional)</li>
-//                 </ul>
-//               </SideCard>
-
-//               <SideCard>
-//                 <h3>Typical next steps</h3>
-//                 <Steps>
-//                   <li>
-//                     <b>1)</b> Quick assessment call
-//                   </li>
-//                   <li>
-//                     <b>2)</b> Proposal + pricing
-//                   </li>
-//                   <li>
-//                     <b>3)</b> Installation & activation
-//                   </li>
-//                   <li>
-//                     <b>4)</b> Monitoring & support
-//                   </li>
-//                 </Steps>
-//               </SideCard>
-//             </Side>
-//           </FormGrid>
-//         </Container>
-//       </Section>
-//     </>
-//   );
-// }
-
-// /* =========================
-//    STYLED COMPONENTS
-// ========================= */
-
-// const Hero = styled.section`
-//   padding: 82px 0 30px;
-//   @media (max-width: ${({ theme }) => theme.bp.md}) {
-//     padding: 64px 0 22px;
-//   }
-// `;
-
-// const HeroGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: 1.05fr 0.95fr;
-//   gap: 20px;
-//   align-items: center;
-
-//   @media (max-width: ${({ theme }) => theme.bp.md}) {
-//     grid-template-columns: 1fr;
-//   }
-// `;
-
-// const HeroText = styled.div``;
-
-// const Kicker = styled.div`
-//   display: inline-flex;
-//   padding: 8px 12px;
-//   border-radius: ${({ theme }) => theme.radii.pill};
-//   background: rgba(255, 255, 255, 0.05);
-//   border: 1px solid ${({ theme }) => theme.colors.line};
-//   color: ${({ theme }) => theme.colors.muted};
-//   font-weight: 650;
-//   font-size: 13px;
-// `;
-
-// const H1 = styled.h1`
-//   margin: 14px 0 10px;
-//   font-size: clamp(34px, 4.1vw, 52px);
-//   line-height: 1.05;
-
-//   span {
-//     background: linear-gradient(
-//       135deg,
-//       ${({ theme }) => theme.colors.brand},
-//       ${({ theme }) => theme.colors.accent}
-//     );
-//     -webkit-background-clip: text;
-//     background-clip: text;
-//     color: transparent;
-//   }
-// `;
-
-// const Lead = styled.p`
-//   margin: 0;
-//   color: ${({ theme }) => theme.colors.muted};
-//   max-width: 66ch;
-//   font-size: 16.5px;
-// `;
-
-// const Info = styled.div`
-//   margin-top: 18px;
-//   display: grid;
-//   gap: 10px;
-//   max-width: 420px;
-// `;
-
-// const InfoRow = styled.div`
-//   padding: 12px 14px;
-//   border-radius: ${({ theme }) => theme.radii.lg};
-//   border: 1px solid ${({ theme }) => theme.colors.line};
-//   background: rgba(255, 255, 255, 0.04);
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   gap: 12px;
-// `;
-
-// const Label = styled.span`
-//   color: ${({ theme }) => theme.colors.muted};
-//   font-weight: 650;
-// `;
-
-// const Value = styled.span`
-//   color: ${({ theme }) => theme.colors.text};
-//   font-weight: 750;
-// `;
-
-// const HeroMedia = styled.div``;
-
-// const MediaCard = styled(Card)`
-//   position: relative;
-//   overflow: hidden;
-//   border-radius: ${({ theme }) => theme.radii.xl};
-//   min-height: 360px;
-
-//   img {
-//     position: absolute;
-//     inset: 0;
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     filter: saturate(1.1) contrast(1.05);
-//   }
-
-//   @media (max-width: ${({ theme }) => theme.bp.md}) {
-//     min-height: 300px;
-//   }
-// `;
-
-// const Overlay = styled.div`
-//   position: absolute;
-//   inset: 0;
-//   background:
-//     radial-gradient(
-//       900px 420px at 30% 10%,
-//       rgba(96, 165, 250, 0.26),
-//       transparent 55%
-//     ),
-//     linear-gradient(180deg, rgba(11, 18, 32, 0.18), rgba(11, 18, 32, 0.92));
-// `;
-
-// const MediaText = styled.div`
-//   position: absolute;
-//   left: 16px;
-//   right: 16px;
-//   bottom: 16px;
-//   padding: 14px;
-//   border-radius: ${({ theme }) => theme.radii.lg};
-//   border: 1px solid rgba(255, 255, 255, 0.16);
-//   background: rgba(255, 255, 255, 0.06);
-//   backdrop-filter: blur(10px);
-
-//   b {
-//     display: block;
-//   }
-//   span {
-//     display: block;
-//     margin-top: 4px;
-//     color: rgba(234, 240, 255, 0.75);
-//     font-size: 13px;
-//   }
-// `;
-
-// const FormGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: 1.15fr 0.85fr;
-//   gap: 14px;
-
-//   @media (max-width: ${({ theme }) => theme.bp.md}) {
-//     grid-template-columns: 1fr;
-//   }
-// `;
-
-// const FormCard = styled(Card)`
-//   padding: 18px;
-// `;
-
-// const FormTitle = styled.h2`
-//   margin: 0 0 6px;
-// `;
-
-// const FormSub = styled.p`
-//   margin: 0 0 14px;
-//   color: ${({ theme }) => theme.colors.muted};
-// `;
-
-// const Row = styled.div`
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   gap: 12px;
-
-//   @media (max-width: ${({ theme }) => theme.bp.sm}) {
-//     grid-template-columns: 1fr;
-//   }
-// `;
-
-// const Field = styled.label`
-//   display: grid;
-//   gap: 8px;
-//   margin-top: 12px;
-
-//   span {
-//     color: ${({ theme }) => theme.colors.muted};
-//     font-weight: 650;
-//     font-size: 13px;
-//   }
-
-//   input,
-//   textarea,
-//   select {
-//     border-radius: 14px;
-//     border: 1px solid ${({ theme }) => theme.colors.line};
-//     background: rgba(255, 255, 255, 0.04);
-//     color: ${({ theme }) => theme.colors.text};
-//     padding: 12px 12px;
-//     outline: none;
-//   }
-
-//   textarea {
-//     resize: vertical;
-//     min-height: 140px;
-//   }
-
-//   input:focus,
-//   textarea:focus {
-//     border-color: rgba(96, 165, 250, 0.45);
-//     box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.12);
-//   }
-// `;
-
-// const Actions = styled.div`
-//   margin-top: 14px;
-//   display: flex;
-//   justify-content: flex-end;
-
-//   @media (max-width: ${({ theme }) => theme.bp.md}) {
-//     justify-content: flex-start;
-//   }
-// `;
-
-// const Status = styled.div`
-//   margin-top: 12px;
-//   padding: 12px 14px;
-//   border-radius: ${({ theme }) => theme.radii.lg};
-//   border: 1px solid
-//     ${({ theme, $type }) =>
-//       $type === "success" ? "rgba(34,197,94,0.35)" : "rgba(239,68,68,0.35)"};
-//   background: ${({ $type }) =>
-//     $type === "success" ? "rgba(34,197,94,0.10)" : "rgba(239,68,68,0.10)"};
-// `;
-
-// const Side = styled.div`
-//   display: grid;
-//   gap: 14px;
-// `;
-
-// const SideCard = styled(Card)`
-//   padding: 18px;
-
-//   h3 {
-//     margin: 0 0 10px;
-//   }
-//   ul {
-//     margin: 0;
-//     padding-left: 18px;
-//     color: ${({ theme }) => theme.colors.muted};
-//   }
-//   li {
-//     margin: 10px 0;
-//   }
-// `;
-
-// const Steps = styled.ul`
-//   margin: 0;
-//   padding-left: 0;
-//   list-style: none;
-
-//   li {
-//     display: flex;
-//     gap: 10px;
-//     align-items: baseline;
-//     padding: 10px 12px;
-//     border: 1px solid ${({ theme }) => theme.colors.line};
-//     border-radius: ${({ theme }) => theme.radii.lg};
-//     background: rgba(255, 255, 255, 0.04);
-//     margin: 10px 0;
-//     color: ${({ theme }) => theme.colors.muted};
-//   }
-//   b {
-//     color: ${({ theme }) => theme.colors.text};
-//   }
-// `;
-
 import styled from "styled-components";
 import {
   FiMail,
@@ -467,6 +5,12 @@ import {
   FiMapPin,
   FiMessageSquare,
   FiCheckCircle,
+  FiAward,
+  FiClock,
+  FiShield,
+  FiTrendingUp,
+  FiCpu,
+  FiSliders,
 } from "react-icons/fi";
 
 import heroImg from "../assets/data-center.jpg"; // <-- add/rename your image
@@ -572,6 +116,73 @@ export default function Contact() {
           </SectionSurface>
         </Container>
       </Section>
+
+      {/* BECOME PARTNER */}
+      <Section>
+        <Container>
+          <SectionSurface>
+            <PartnerTop>
+              <PartnerKicker>BECOME PARTNER</PartnerKicker>
+              <PartnerTitle>Why work with AlethraLink</PartnerTitle>
+              <PartnerLead>
+                A focused engineering partner built for reliability, support,
+                and real-world execution.
+              </PartnerLead>
+            </PartnerTop>
+
+            <PartnerGrid>
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiAward />
+                </PartnerIcon>
+                <PartnerName>Professional Expert</PartnerName>
+              </PartnerCard>
+
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiClock />
+                </PartnerIcon>
+                <PartnerName>24/7 Premium Support</PartnerName>
+              </PartnerCard>
+
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiCheckCircle />
+                </PartnerIcon>
+                <PartnerName>Top Quality Material</PartnerName>
+              </PartnerCard>
+
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiShield />
+                </PartnerIcon>
+                <PartnerName>Certified Technician</PartnerName>
+              </PartnerCard>
+
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiTrendingUp />
+                </PartnerIcon>
+                <PartnerName>Reliable Solutions</PartnerName>
+              </PartnerCard>
+
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiCpu />
+                </PartnerIcon>
+                <PartnerName>Cutting-Edge Technology</PartnerName>
+              </PartnerCard>
+
+              <PartnerCard>
+                <PartnerIcon>
+                  <FiSliders />
+                </PartnerIcon>
+                <PartnerName>Tailored Connectivity Plans</PartnerName>
+              </PartnerCard>
+            </PartnerGrid>
+          </SectionSurface>
+        </Container>
+      </Section>
     </>
   );
 }
@@ -600,7 +211,7 @@ const Overlay = styled.div`
   background: linear-gradient(
     180deg,
     rgba(10, 14, 22, 0.82),
-    rgba(10, 14, 22, 0.94)
+    rgb(10 14 22 / 62%)
   );
 `;
 
@@ -630,7 +241,7 @@ const Subtitle = styled.p`
 `;
 
 const Section = styled.section`
-  padding: 90px 0;
+  padding: 60px 0;
   position: relative;
   background: radial-gradient(circle at top left, #111b2e, #0b1220 60%);
 `;
@@ -810,4 +421,88 @@ const Note = styled.p`
   margin: 12px 0 0;
   opacity: 0.85;
   line-height: 1.6;
+`;
+
+/* BECOME PARTNER */
+
+const PartnerTop = styled.div`
+  text-align: center;
+  margin-bottom: 22px;
+`;
+
+const PartnerKicker = styled.p`
+  margin: 0 0 8px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  text-transform: uppercase;
+`;
+
+const PartnerTitle = styled.h2`
+  margin: 0;
+  font-size: 2rem;
+`;
+
+const PartnerLead = styled.p`
+  margin: 10px auto 0;
+  max-width: 860px;
+  line-height: 1.7;
+  opacity: 0.9;
+`;
+
+const PartnerGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const PartnerCard = styled.div`
+  border-radius: 18px;
+  padding: 18px 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.25s ease;
+  min-height: 110px;
+
+  display: grid;
+  align-content: start;
+  gap: 10px;
+
+  &:hover {
+    transform: translateY(-6px);
+    background: rgba(94, 234, 212, 0.07);
+    border-color: rgba(94, 234, 212, 0.18);
+  }
+`;
+
+const PartnerIcon = styled.div`
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(94, 234, 212, 0.1);
+  border: 1px solid rgba(94, 234, 212, 0.2);
+
+  svg {
+    color: #5eead4;
+    font-size: 20px;
+  }
+`;
+
+const PartnerName = styled.h3`
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.25;
 `;

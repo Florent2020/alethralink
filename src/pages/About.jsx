@@ -511,68 +511,6 @@ export default function About() {
               </ValueCard>
             </ValuesGrid>
 
-            {/* <Section>
-              <Container>
-                <SectionSurface>
-                  <Center style={{ marginBottom: 18 }}>
-                    <H2>Our Values</H2>
-                  </Center>
-
-                  <Grid>
-                    <InfoCard>
-                      <FiTrendingUp />
-                      <h3>Innovation</h3>
-                      <p>
-                        Embracing technological advancement to stay at the
-                        forefront of telecommunications.
-                      </p>
-                    </InfoCard>
-                    <InfoCard>
-                      <FiHeart />
-                      <h3>Reliability & Quality</h3>
-                      <p>
-                        Delivering dependable, high-performance solutions with
-                        the highest standards of service excellence.
-                      </p>
-                    </InfoCard>
-                    <InfoCard>
-                      <FiUsers />
-                      <h3>Security & Privacy</h3>
-                      <p>
-                        WProtecting customer data and communications through
-                        rigorous security practices.
-                      </p>
-                    </InfoCard>
-
-                    <InfoCard>
-                      <FiShield />
-                      <h3>Sustainability</h3>
-                      <p>
-                        Promoting responsible, environmentally conscious
-                        solutions that support long-term growth.
-                      </p>
-                    </InfoCard>
-                    <InfoCard>
-                      <FiUsers />
-                      <h3>Inclusivity</h3>
-                      <p>
-                        Enabling accessible, scalable connectivity for diverse
-                        businesses and communities.
-                      </p>
-                    </InfoCard>
-                    <InfoCard>
-                      <FiTrendingUp />
-                      <h3>Continuous Improvement</h3>
-                      <p>
-                        Constantly refining our processes, technologies, and
-                        services to create lasting value.
-                      </p>
-                    </InfoCard>
-                  </Grid>
-                </SectionSurface>
-              </Container>
-            </Section> */}
-
             <CtaRow>
               <PrimaryBtn to="/contact">
                 Work With Us <FiArrowRight />
@@ -610,7 +548,7 @@ const Overlay = styled.div`
   background: linear-gradient(
     180deg,
     rgba(10, 14, 22, 0.82),
-    rgba(10, 14, 22, 0.94)
+    rgb(10 14 22 / 62%)
   );
 `;
 
@@ -680,7 +618,7 @@ const SecondaryBtn = styled(Link)`
 `;
 
 const Section = styled.section`
-  padding: 90px 0;
+  padding: 60px 0;
   position: relative;
   background: radial-gradient(circle at top left, #111b2e, #0b1220 60%);
 `;
@@ -818,6 +756,7 @@ const Divider = styled.div`
   height: 1px;
   margin: 22px 0;
   background: rgba(255, 255, 255, 0.08);
+  margin-top: 2.5rem !important;
 `;
 
 const ValuesGrid = styled.div`

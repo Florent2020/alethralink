@@ -858,7 +858,7 @@ const Hero = styled.section`
   background-image: url(${heroImg});
   background-size: cover;
   background-position: center;
-  padding: 110px 0;
+  padding: 95px 0;
   color: white;
 `;
 
@@ -868,7 +868,7 @@ const Overlay = styled.div`
   background: linear-gradient(
     180deg,
     rgba(10, 14, 22, 0.82),
-    rgba(10, 14, 22, 0.94)
+    rgb(10 14 22 / 62%)
   );
 `;
 

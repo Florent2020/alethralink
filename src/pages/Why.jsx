@@ -643,7 +643,7 @@ const Overlay = styled.div`
   background: linear-gradient(
     180deg,
     rgba(10, 14, 22, 0.82),
-    rgba(10, 14, 22, 0.94)
+    rgb(10 14 22 / 62%)
   );
 `;
 
