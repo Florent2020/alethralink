@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopAndTitle from "./components/ScrollToTopAndTitle";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -60,8 +60,8 @@ export default function App() {
       <GlobalStyle />
       <AppShell>
         <Header />
+        <ScrollToTopAndTitle />
         <Main>
-          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
