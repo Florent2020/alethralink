@@ -466,7 +466,15 @@ const WhyList = styled.ul`
   padding: 0;
   margin: 0;
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 14px;
+
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 
   li {
     padding: 14px 14px;
