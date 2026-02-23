@@ -13,7 +13,7 @@ import {
   FiSliders,
 } from "react-icons/fi";
 
-import SEO from "../components/SEO";
+// import SEO from "../components/SEO";
 
 import heroImg from "../assets/data-center.jpg"; // <-- add/rename your image
 import sideImg from "../assets/data-center.jpg"; // <-- you already have this
@@ -21,11 +21,11 @@ import sideImg from "../assets/data-center.jpg"; // <-- you already have this
 export default function Contact() {
   return (
     <>
-      <SEO
+      {/* <SEO
         title="Contact AlethraLink | Let’s Build Your Network"
         description="Get in touch with AlethraLink for network engineering services, partnership discussions, and trial engagement opportunities."
         path="/contact"
-      />
+      /> */}
 
       <Hero>
         <Overlay />

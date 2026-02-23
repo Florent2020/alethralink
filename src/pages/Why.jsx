@@ -10,7 +10,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 
-import SEO from "../components/SEO";
+// import SEO from "../components/SEO";
 
 import heroImg from "../assets/office.png"; // <-- add/rename your image
 import imgTeam from "../assets/office.png"; // <-- add/rename your image
@@ -18,11 +18,11 @@ import imgTeam from "../assets/office.png"; // <-- add/rename your image
 export default function Why() {
   return (
     <>
-      <SEO
+      {/* <SEO
         title="Why Partner With AlethraLink | Engineering Excellence"
         description="Professional experts, 24/7 support, certified technicians, vendor-agnostic solutions and reliable performance."
         path="/why"
-      />
+      /> */}
 
       <Hero>
         <Overlay />

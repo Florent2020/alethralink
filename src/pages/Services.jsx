@@ -12,7 +12,7 @@ import {
   FiServer,
 } from "react-icons/fi";
 
-import SEO from "../components/SEO";
+// import SEO from "../components/SEO";
 
 import heroImg from "../assets/network-cubes.jpg"; // <-- add/rename your image
 import imgA from "../assets/network-cubes.jpg"; // <-- add/rename your image
@@ -24,11 +24,11 @@ import equipmentImg from "../assets/telecom-solutions-lightera-4.jpg";
 export default function Services() {
   return (
     <>
-      <SEO
+      {/* <SEO
         title="Network Engineering Services | AlethraLink"
         description="Operations support, L2/L3 troubleshooting, migrations, audits, connectivity solutions and vendor-agnostic engineering expertise."
         path="/services"
-      />
+      /> */}
 
       <Hero>
         <Overlay />

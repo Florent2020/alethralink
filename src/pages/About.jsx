@@ -10,7 +10,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 
-import SEO from "../components/SEO";
+// import SEO from "../components/SEO";
 
 import heroImg from "../assets/engineer.jpg"; // <-- add/rename your image
 import imgStory from "../assets/engineer.jpg"; // <-- add/rename your image
@@ -18,11 +18,11 @@ import imgStory from "../assets/engineer.jpg"; // <-- add/rename your image
 export default function About() {
   return (
     <>
-      <SEO
+      {/* <SEO
         title="About AlethraLink | Structured Network Engineering"
         description="AlethraLink is a European network engineering company delivering structured, stable, and scalable telecommunications solutions."
         path="/about"
-      />
+      /> */}
 
       <Hero>
         <Overlay />
