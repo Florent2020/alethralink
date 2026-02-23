@@ -105,7 +105,7 @@ const Logo = styled(NavLink)`
 `;
 
 const DesktopLogo = styled.img`
-  height: 38px;
+  height: 39px;
 
   @media (max-width: 920px) {
     display: none;
@@ -113,7 +113,7 @@ const DesktopLogo = styled.img`
 `;
 
 const MobileLogo = styled.img`
-  height: 34px;
+  height: 44px;
   display: none;
 
   @media (max-width: 920px) {
