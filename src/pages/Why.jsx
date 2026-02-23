@@ -387,7 +387,7 @@ const P = styled.p`
   opacity: 0.92;
 
   &.lead {
-    max-width: 860px;
+    max-width: 560px;
     margin: 10px auto 0;
   }
 `;
