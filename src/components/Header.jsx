@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import logoImg from "../assets/logo.jpg";
+import logoMobImg from "../assets/logo-mobile.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -17,8 +18,13 @@ export default function Header() {
   return (
     <Wrap>
       <Inner>
+        {/* <Logo to="/" onClick={close}>
+          <img src={logoImg} alt="AlethraLink logo" />
+        </Logo> */}
+
         <Logo to="/" onClick={close}>
-          <img src={logoImg} alt="logo" />
+          <DesktopLogo src={logoImg} alt="Alethralink logo" />
+          <MobileLogo src={logoMobImg} alt="Alethralink icon" />
         </Logo>
 
         <Right>
@@ -89,8 +95,35 @@ const Inner = styled.div`
   gap: 16px;
 `;
 
+// const Logo = styled(NavLink)`
+//   width: 150px;
+// `;
+
 const Logo = styled(NavLink)`
-  width: 150px;
+  display: flex;
+  align-items: center;
+`;
+
+const DesktopLogo = styled.img`
+  height: 38px;
+
+  @media (max-width: 920px) {
+    display: none;
+  }
+`;
+
+const MobileLogo = styled.img`
+  height: 34px;
+  display: none;
+
+  @media (max-width: 920px) {
+    display: block;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 const Right = styled.div`
