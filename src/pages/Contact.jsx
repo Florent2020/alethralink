@@ -13,12 +13,20 @@ import {
   FiSliders,
 } from "react-icons/fi";
 
+import SEO from "../components/SEO";
+
 import heroImg from "../assets/data-center.jpg"; // <-- add/rename your image
 import sideImg from "../assets/data-center.jpg"; // <-- you already have this
 
 export default function Contact() {
   return (
     <>
+      <SEO
+        title="Contact AlethraLink | Let’s Build Your Network"
+        description="Get in touch with AlethraLink for network engineering services, partnership discussions, and trial engagement opportunities."
+        path="/contact"
+      />
+
       <Hero>
         <Overlay />
         <Container>
@@ -58,7 +66,7 @@ export default function Contact() {
                     <FiPhone />
                     <div>
                       <strong>Phone</strong>
-                      <span>+31 000 000 000</span>
+                      <span>+1 347-704-7744</span>
                     </div>
                   </InfoItem>
 
@@ -66,7 +74,7 @@ export default function Contact() {
                     <FiMapPin />
                     <div>
                       <strong>Location</strong>
-                      <span>Europe</span>
+                      <span>Europe & U.S.</span>
                     </div>
                   </InfoItem>
                 </Info>

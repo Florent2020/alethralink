@@ -23,6 +23,8 @@ import {
 } from "react-icons/fi";
 // import { Container } from "../components/UI";
 
+import SEO from "../components/SEO";
+
 import heroImg from "../assets/hero-city-1.jpg"; // city image
 import dataCenterImg from "../assets/data-center.jpg";
 import howWeWorkImg from "../assets/how-we-work.jpg";
@@ -32,6 +34,11 @@ import whoSupportImg from "../assets/who-support.png";
 export default function Home() {
   return (
     <>
+      <SEO
+        title="AlethraLink | Network Engineering Services for ISPs & Enterprises"
+        description="Professional network engineering services for ISPs and enterprises: operations support, L2/L3 troubleshooting, design, optimization, migrations, and audits."
+        path="/"
+      />
       {/* HERO */}
       <Hero>
         <Overlay />
