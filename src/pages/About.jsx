@@ -344,7 +344,7 @@ const Split = styled.div`
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 38px;
-  align-items: start;
+  align-items: center;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;

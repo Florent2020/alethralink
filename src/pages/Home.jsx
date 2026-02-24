@@ -394,7 +394,7 @@ export default function Home() {
                   <FiPhone />
                   <div>
                     <strong>Phone</strong>
-                    <span>+31 000 000 000</span>
+                    <span>+1 347-704-7744</span>
                   </div>
                 </InfoItem>
 
@@ -402,7 +402,7 @@ export default function Home() {
                   <FiMapPin />
                   <div>
                     <strong>Location</strong>
-                    <span>Europe</span>
+                    <span>Europe & U.S.</span>
                   </div>
                 </InfoItem>
               </ContactInfo>

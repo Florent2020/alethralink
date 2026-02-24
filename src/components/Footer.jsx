@@ -85,7 +85,13 @@ export default function Footer() {
               © {new Date().getFullYear()} AlethraLink. All rights reserved.
             </Copy>
 
-            <BottomRight>
+            <BottomLinks>
+              <MiniLink to="/contact">Get in Touch</MiniLink>
+              <Dot>•</Dot>
+              <MiniLink to="/services">Explore Services</MiniLink>
+            </BottomLinks>
+
+            {/* <BottomRight>
               Designed &amp; Developed by{" "}
               <DevLink
                 href="https://florent-hajdari.com/"
@@ -94,7 +100,7 @@ export default function Footer() {
               >
                 Florent Hajdari <FiArrowUpRight />
               </DevLink>
-            </BottomRight>
+            </BottomRight> */}
           </Bottom>
         </Content>
       </Container>
@@ -238,34 +244,55 @@ const Copy = styled.div`
   font-size: 0.9rem;
 `;
 
-const BottomRight = styled.div`
-  font-size: 0.95rem;
-  opacity: 0.75;
+const BottomLinks = styled.div`
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  opacity: 0.85;
 `;
 
-const DevLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  color: white;
-  font-weight: 700;
+const MiniLink = styled(Link)`
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  transition: 0.25s ease;
-
-  svg {
-    font-size: 0.95em;
-    opacity: 0.85;
-    transform: translateY(-0.5px);
-    transition: 0.25s ease;
-  }
+  font-weight: 700;
 
   &:hover {
     color: #5eead4;
   }
-
-  &:hover svg {
-    opacity: 1;
-    transform: translate(2px, -2px);
-  }
 `;
+
+const Dot = styled.span`
+  opacity: 0.55;
+`;
+
+// const BottomRight = styled.div`
+//   font-size: 0.95rem;
+//   opacity: 0.75;
+// `;
+
+// const DevLink = styled.a`
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 6px;
+
+//   color: white;
+//   font-weight: 700;
+//   text-decoration: none;
+//   transition: 0.25s ease;
+
+//   svg {
+//     font-size: 0.95em;
+//     opacity: 0.85;
+//     transform: translateY(-0.5px);
+//     transition: 0.25s ease;
+//   }
+
+//   &:hover {
+//     color: #5eead4;
+//   }
+
+//   &:hover svg {
+//     opacity: 1;
+//     transform: translate(2px, -2px);
+//   }
+// `;
