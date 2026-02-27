@@ -516,6 +516,7 @@
 // `;
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import {
   FiMail,
@@ -535,35 +536,44 @@ import heroImg from "../assets/data-center.jpg";
 import sideImg from "../assets/data-center.jpg";
 
 export default function Contact() {
-  // ✅ Replace with your Formspree endpoint
-  const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
 
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
-  async function handleSubmit(e) {
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((p) => ({ ...p, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
     try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+      );
 
-      if (res.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
+      setStatus("success");
+      setFormData({ name: "", email: "", company: "", message: "" });
     } catch (err) {
+      console.error(err);
       setStatus("error");
     }
-  }
+  };
 
   return (
     <>
@@ -647,37 +657,38 @@ export default function Contact() {
                   <FiMessageSquare /> Send us a message
                 </FormTitle>
 
-                {/* ✅ Formspree functional form */}
                 <Form onSubmit={handleSubmit}>
-                  {/* ✅ name attributes are important for Formspree */}
-                  <Input name="name" placeholder="Full Name" required />
+                  <Input
+                    name="name"
+                    placeholder="Full Name"
+                    value={formData.name}
+                    onChange={onChange}
+                    required
+                  />
+
                   <Input
                     name="email"
                     placeholder="Email Address"
                     type="email"
+                    value={formData.email}
+                    onChange={onChange}
                     required
                   />
-                  <Input name="company" placeholder="Company (optional)" />
+
+                  <Input
+                    name="company"
+                    placeholder="Company (optional)"
+                    value={formData.company}
+                    onChange={onChange}
+                  />
+
                   <TextArea
                     name="message"
                     placeholder="How can we help?"
                     rows="6"
+                    value={formData.message}
+                    onChange={onChange}
                     required
-                  />
-
-                  {/* Optional: nicer subject line */}
-                  <input
-                    type="hidden"
-                    name="_subject"
-                    value="New message from AlethraLink"
-                  />
-
-                  {/* Lightweight anti-spam honeypot (bots fill it, humans won't) */}
-                  <HiddenInput
-                    name="_gotcha"
-                    tabIndex="-1"
-                    autoComplete="off"
-                    aria-hidden="true"
                   />
 
                   <Submit type="submit" disabled={status === "sending"}>
@@ -692,8 +703,7 @@ export default function Contact() {
 
                   {status === "error" && (
                     <FormStatus>
-                      ❌ Something went wrong. Please try again or email us
-                      directly.
+                      ❌ Something went wrong. Please try again.
                     </FormStatus>
                   )}
                 </Form>
@@ -965,6 +975,13 @@ const Form = styled.form`
   gap: 12px;
 `;
 
+// const FormStatus = styled.p`
+//   margin: 10px 0 0;
+//   line-height: 1.6;
+//   opacity: 0.95;
+//   color: ${({ $ok }) => ($ok ? "#5eead4" : "#ffb4b4")};
+// `;
+
 const Input = styled.input`
   padding: 14px 14px;
   border-radius: 12px;
@@ -1030,14 +1047,14 @@ const FormStatus = styled.p`
 `;
 
 /* ✅ Honeypot field (hidden) */
-const HiddenInput = styled.input`
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-`;
+// const HiddenInput = styled.input`
+//   position: absolute;
+//   left: -9999px;
+//   top: auto;
+//   width: 1px;
+//   height: 1px;
+//   overflow: hidden;
+// `;
 
 /* BECOME PARTNER */
 
