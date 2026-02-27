@@ -1,3 +1,5 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {
@@ -32,6 +34,45 @@ import howWeWorkImg from "../assets/how-we-work.jpg";
 import whoSupportImg from "../assets/who-support.png";
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((p) => ({ ...p, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+      );
+
+      setStatus("success");
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
+
   return (
     <>
       {/* <SEO
@@ -408,12 +449,55 @@ export default function Home() {
               </ContactInfo>
 
               {/* Contact Form */}
-              <Form>
-                <Input placeholder="Full Name" required />
-                <Input placeholder="Email Address" type="email" required />
-                <Input placeholder="Company" />
-                <TextArea placeholder="Your Message" rows="5" required />
-                <SubmitButton type="submit">Send Message</SubmitButton>
+              <Form onSubmit={handleSubmit}>
+                <Input
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={onChange}
+                  required
+                />
+
+                <Input
+                  name="email"
+                  placeholder="Email Address"
+                  type="email"
+                  value={formData.email}
+                  onChange={onChange}
+                  required
+                />
+
+                <Input
+                  name="company"
+                  placeholder="Company (optional)"
+                  value={formData.company}
+                  onChange={onChange}
+                />
+
+                <TextArea
+                  name="message"
+                  placeholder="How can we help?"
+                  rows="6"
+                  value={formData.message}
+                  onChange={onChange}
+                  required
+                />
+
+                <Submit type="submit" disabled={status === "sending"}>
+                  {status === "sending" ? "Sending..." : "Send Message"}
+                </Submit>
+
+                {status === "success" && (
+                  <FormStatus $ok>
+                    ✅ Thanks! Your message has been sent.
+                  </FormStatus>
+                )}
+
+                {status === "error" && (
+                  <FormStatus>
+                    ❌ Something went wrong. Please try again.
+                  </FormStatus>
+                )}
               </Form>
             </ContactGrid>
           </SectionSurface>
