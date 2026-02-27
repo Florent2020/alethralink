@@ -701,7 +701,7 @@ export default function Contact() {
                   {/* Optional: nicer subject line */}
                   <input
                     type="hidden"
-                    name="subject"
+                    name="_subject"
                     value="New message from AlethraLink"
                   />
 
