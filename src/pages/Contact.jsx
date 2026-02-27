@@ -535,56 +535,22 @@ import heroImg from "../assets/data-center.jpg";
 import sideImg from "../assets/data-center.jpg";
 
 export default function Contact() {
-  // const FORMSPREE_URL = "https://formspree.io/f/mojnbdyl";
-
-  // const [status, setStatus] = useState("idle"); // idle | sending | success | error
-
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-  //   setStatus("sending");
-
-  //   const form = e.currentTarget;
-  //   const data = new FormData(form);
-
-  //   try {
-  //     const res = await fetch(FORMSPREE_URL, {
-  //       method: "POST",
-  //       body: data,
-  //       headers: { Accept: "application/json" },
-  //     });
-
-  //     if (res.ok) {
-  //       setStatus("success");
-  //       form.reset();
-  //     } else {
-  //       setStatus("error");
-  //     }
-  //   } catch (err) {
-  //     setStatus("error");
-  //   }
-  // }
-
-  const [status, setStatus] = useState("idle");
   const FORMSPREE_URL = "https://formspree.io/f/mojnbdyl";
 
-  const handleSubmit = async (e) => {
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  async function handleSubmit(e) {
     e.preventDefault();
     setStatus("sending");
 
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Make the subject include the sender name (looks much better in Gmail)
-    const senderName = data.get("name") || "Website visitor";
-    data.set("subject", `New message from ${senderName} — AlethraLink`);
-
     try {
       const res = await fetch(FORMSPREE_URL, {
         method: "POST",
         body: data,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       if (res.ok) {
@@ -596,7 +562,41 @@ export default function Contact() {
     } catch (err) {
       setStatus("error");
     }
-  };
+  }
+
+  // const [status, setStatus] = useState("idle");
+  // const FORMSPREE_URL = "https://formspree.io/f/mojnbdyl";
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus("sending");
+
+  //   const form = e.currentTarget;
+  //   const data = new FormData(form);
+
+  //   // Make the subject include the sender name (looks much better in Gmail)
+  //   const senderName = data.get("name") || "Website visitor";
+  //   data.set("subject", `New message from ${senderName} — AlethraLink`);
+
+  //   try {
+  //     const res = await fetch(FORMSPREE_URL, {
+  //       method: "POST",
+  //       body: data,
+  //       headers: {
+  //         Accept: "application/json",
+  //       },
+  //     });
+
+  //     if (res.ok) {
+  //       setStatus("success");
+  //       form.reset();
+  //     } else {
+  //       setStatus("error");
+  //     }
+  //   } catch (err) {
+  //     setStatus("error");
+  //   }
+  // };
 
   return (
     <>
@@ -701,7 +701,7 @@ export default function Contact() {
                   {/* Optional: nicer subject line */}
                   <input
                     type="hidden"
-                    name="_subject"
+                    name="subject"
                     value="New message from AlethraLink"
                   />
 
