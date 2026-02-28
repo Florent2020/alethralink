@@ -965,25 +965,57 @@ const TextArea = styled.textarea`
   }
 `;
 
-const SubmitButton = styled.button`
+/* ✅ Status message under button */
+
+const Submit = styled.button`
   padding: 14px 16px;
   border-radius: 14px;
   border: none;
   background: #5eead4;
   color: #0b1220;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
   transition: 0.25s ease;
-  justify-self: start; /* 👈 key: don't stretch full width */
-  min-width: 180px;
 
   &:hover {
     transform: translateY(-2px);
     background: #2dd4bf;
   }
 
-  @media (max-width: 900px) {
-    justify-self: stretch; /* on mobile it's fine to go full width */
-    width: 100%;
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    transform: none;
   }
 `;
+
+const FormStatus = styled.p`
+  margin: 8px 0 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  color: ${({ $ok }) => ($ok ? "#5eead4" : "rgba(255,255,255,0.86)")};
+`;
+
+// const SubmitButton = styled.button`
+//   padding: 14px 16px;
+//   border-radius: 14px;
+//   border: none;
+//   background: #5eead4;
+//   color: #0b1220;
+//   font-weight: 800;
+//   cursor: pointer;
+//   transition: 0.25s ease;
+//   justify-self: start; /* 👈 key: don't stretch full width */
+//   min-width: 180px;
+
+//   &:hover {
+//     transform: translateY(-2px);
+//     background: #2dd4bf;
+//   }
+
+//   @media (max-width: 900px) {
+//     justify-self: stretch; /* on mobile it's fine to go full width */
+//     width: 100%;
+//   }
+// `;
