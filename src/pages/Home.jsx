@@ -50,6 +50,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("HOME FORM SUBMIT ✅", formData);
     setStatus("sending");
 
     try {
