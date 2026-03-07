@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FiMail, FiArrowUpRight } from "react-icons/fi";
 
 import logoImg from "../assets/logo.jpg";
@@ -9,6 +9,20 @@ export default function Footer() {
   const [open, setOpen] = useState(false);
 
   const close = () => setOpen(false);
+
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    close();
+
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -21,7 +35,7 @@ export default function Footer() {
         <Content>
           <Top>
             <Brand>
-              <Logo to="/" onClick={close}>
+              <Logo to="/" onClick={handleLogoClick}>
                 <img src={logoImg} alt="logo" />
               </Logo>
               <Tagline>SMART. SCALABLE. STRATEGIC.</Tagline>

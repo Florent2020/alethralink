@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 import logoImg from "../assets/logo.jpg";
@@ -9,6 +9,20 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   const close = () => setOpen(false);
+
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    close();
+
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -22,7 +36,7 @@ export default function Header() {
           <img src={logoImg} alt="AlethraLink logo" />
         </Logo> */}
 
-        <Logo to="/" onClick={close}>
+        <Logo to="/" onClick={handleLogoClick}>
           <DesktopLogo src={logoImg} alt="Alethralink logo" />
           <MobileLogo src={logoMobImg} alt="Alethralink icon" />
         </Logo>

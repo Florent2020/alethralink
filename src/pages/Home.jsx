@@ -27,7 +27,7 @@ import {
 
 // import SEO from "../components/SEO";
 
-import heroImg from "../assets/hero-city-1.jpg"; // city image
+import heroImg from "../assets/hero-city-1.jpg";
 import dataCenterImg from "../assets/data-center.jpg";
 import howWeWorkImg from "../assets/how-we-work.jpg";
 
