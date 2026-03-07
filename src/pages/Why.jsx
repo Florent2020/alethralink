@@ -193,7 +193,7 @@ export default function Why() {
               </li>
               <li>
                 <strong>Tech-Ready Infrastructure</strong>
-                <span>Modern IT infrastructure built for global busines.</span>
+                <span>Modern IT infrastructure built for global business.</span>
               </li>
               <li>
                 <strong>Time Zone Advantage</strong>
