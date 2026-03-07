@@ -12,10 +12,12 @@ export default function Header() {
 
   const location = useLocation();
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e) => {
     close();
 
     if (location.pathname === "/") {
+      e.preventDefault();
+
       window.scrollTo({
         top: 0,
         left: 0,
@@ -32,10 +34,6 @@ export default function Header() {
   return (
     <Wrap>
       <Inner>
-        {/* <Logo to="/" onClick={close}>
-          <img src={logoImg} alt="AlethraLink logo" />
-        </Logo> */}
-
         <Logo to="/" onClick={handleLogoClick}>
           <DesktopLogo src={logoImg} alt="Alethralink logo" />
           <MobileLogo src={logoMobImg} alt="Alethralink icon" />
@@ -43,7 +41,7 @@ export default function Header() {
 
         <Right>
           <DesktopNav>
-            <Item to="/" end>
+            <Item to="/" end onClick={handleLogoClick}>
               Home
             </Item>
             <Item to="/services">Services</Item>
@@ -64,7 +62,7 @@ export default function Header() {
 
       <MobilePanel $open={open}>
         <MobileNav>
-          <MobileItem to="/" end onClick={close}>
+          <MobileItem to="/" end onClick={handleLogoClick}>
             Home
           </MobileItem>
           <MobileItem to="/services" onClick={close}>

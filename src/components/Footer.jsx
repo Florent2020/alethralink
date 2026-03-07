@@ -12,10 +12,12 @@ export default function Footer() {
 
   const location = useLocation();
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (e) => {
     close();
 
     if (location.pathname === "/") {
+      e.preventDefault();
+
       window.scrollTo({
         top: 0,
         left: 0,
@@ -62,7 +64,9 @@ export default function Footer() {
               <Col>
                 <ColTitle>Quick Links</ColTitle>
                 <Nav>
-                  <NavItem to="/">Home</NavItem>
+                  <NavItem to="/" onClick={handleLogoClick}>
+                    Home
+                  </NavItem>
                   <NavItem to="/services">Services</NavItem>
                   <NavItem to="/why">Why AlethraLink</NavItem>
                   <NavItem to="/about">About</NavItem>
@@ -278,35 +282,3 @@ const MiniLink = styled(Link)`
 const Dot = styled.span`
   opacity: 0.55;
 `;
-
-// const BottomRight = styled.div`
-//   font-size: 0.95rem;
-//   opacity: 0.75;
-// `;
-
-// const DevLink = styled.a`
-//   display: inline-flex;
-//   align-items: center;
-//   gap: 6px;
-
-//   color: white;
-//   font-weight: 700;
-//   text-decoration: none;
-//   transition: 0.25s ease;
-
-//   svg {
-//     font-size: 0.95em;
-//     opacity: 0.85;
-//     transform: translateY(-0.5px);
-//     transition: 0.25s ease;
-//   }
-
-//   &:hover {
-//     color: #5eead4;
-//   }
-
-//   &:hover svg {
-//     opacity: 1;
-//     transform: translate(2px, -2px);
-//   }
-// `;
