@@ -181,7 +181,7 @@ export default function About() {
                 <FiTarget />
                 <h3>Security & Privacy</h3>
                 <p>
-                  WProtecting customer data and communications through rigorous
+                  Protecting customer data and communications through rigorous
                   security practices.
                 </p>
               </ValueCard>
